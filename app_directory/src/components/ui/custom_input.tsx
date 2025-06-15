@@ -26,6 +26,25 @@ export default function ChatCard() {
                 onChange={(e) => setInput(e.target.value)}
                 className="text-lg text-slate-400 w-full outline-0 resize-none p-0 py-4 shadow-none border-0 placeholder-slate-400 focus-visible:ring-0 focus-visible:ring-offset-0 scrollbar-hide"
               />
+            </div>
+            <div className="flex justify-between flex-row mt-2">
+              <div className="flex items-center gap-2">
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  className="h-8 w-8 rounded-full bg-slate-400 hover:bg-slate-300 text-slate-800"
+                >
+                  <Plus className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="h-8 px-1 rounded-full bg-slate-400 hover:bg-slate-300 text-slate-800 text-xs flex items-center gap-1"
+                >
+                  <Globe className="h-3 w-3" />
+                  News
+                </Button>
+              </div>
+
               <Button
                 size="icon"
                 className="h-6 w-6 bg-accent rounded-lg shadow-none text-slate-800 p-4 overflow-hidden relative"
@@ -57,40 +76,24 @@ export default function ChatCard() {
                 </AnimatePresence>
               </Button>
             </div>
-            <div className="flex items-center gap-2 mt-2">
-              <Button
-                size="icon"
-                variant="ghost"
-                className="h-8 w-8 rounded-full bg-slate-400 hover:bg-slate-300 text-slate-800"
-              >
-                <Plus className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                className="h-8 px-1 rounded-full bg-slate-400 hover:bg-slate-300 text-slate-800 text-xs flex items-center gap-1"
-              >
-                <Globe className="h-3 w-3" />
-                News
-              </Button>
-            </div>
           </div>
-          
-              {/* Action Buttons */}
-              <div className="flex flex-wrap gap-3 font-mono">
-                {[
-                  "Market Scan",
-                  "Portfolio Review",
-                  "Predict Trends",
-                  "Risk Analysis",
-                ].map((action) => (
-                  <button
-                    key={action}
-                    className="rounded-md bg-accent/10 px-3 py-1.5 text-xs text-accent ring-1 ring-inset ring-slate-800 transition-all hover:text-cyan-300 hover:ring-accent/30 sm:text-sm"
-                  >
-                    {action}
-                  </button>
-                ))}
-              </div>
+
+          {/* Action Buttons */}
+          <div className="flex justify-center-safe flex-wrap gap-3 font-mono">
+            {[
+              "Market Scan",
+              "Portfolio Review",
+              "Predict Trends",
+              "Risk Analysis",
+            ].map((action) => (
+              <button
+                key={action}
+                className="rounded-md bg-accent/10 px-3 py-1.5 text-xs text-accent ring-1 ring-inset ring-slate-800 transition-all hover:text-cyan-300 hover:ring-accent/30 sm:text-sm"
+              >
+                {action}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

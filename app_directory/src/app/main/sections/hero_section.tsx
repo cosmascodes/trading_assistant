@@ -17,7 +17,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative md:min-h-screen w-full overflow-hidden">
       {/* Full-bleed Interactive Graph Background - Responsive */}
       <div
         className={`absolute inset-x-0 top-0 z-0 h-full w-full transition-all duration-300 md:top-0 ${
@@ -33,10 +33,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-gray-900/95 via-gray-900/85 to-gray-900/95" />
 
       {/* Responsive Content Container */}
-      <div className="relative z-20 mx-auto flex min-h-screen flex-col justify-center px-4 text-slate-100 sm:px-6 md:px-8 lg:px-10 pointer-events-none">
-        <div className="w-full max-w-3xl mx-auto text-center p-4 pt-20 md:p-6 md:pt-32">
+      <div className="relative z-20 mx-auto flex md:min-h-screen flex-col justify-center px-4 text-slate-100 sm:px-6 md:px-8 lg:px-10 pointer-events-none">
+        <div className="w-full max-w-3xl mx-auto text-center p-4 md:p-6 pt-32 md:pt-40">
           {/* Responsive Typography */}
-          <h3 className="mb-4 text-2xl font-bold leading-tight text-slate-400 sm:text-3xl md:mb-6 md:text-4xl">
+          <h3 className="mb-4 font-bold leading-tight text-slate-400 text-3xl md:mb-6 md:text-4xl">
             Hi, I am <span className="text-slate-300">TradeMind</span> AI.
             <br className="hidden sm:inline" />
             I analyze and predict market movements.
