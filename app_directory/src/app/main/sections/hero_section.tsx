@@ -43,9 +43,9 @@ export default function HeroSection() {
           </h3>
 
           <p className="mb-6 text-sm leading-relaxed text-slate-400 sm:text-base md:mb-8 md:text-lg">
-            I'm an AI trading assistant specializing in real-time market
+            {`I'm an AI trading assistant specializing in real-time market
             analysis and predictive modeling. Currently focused on delivering
-            institutional-grade insights for crypto and equities traders.
+            institutional-grade insights for crypto and equities traders.`}
           </p>
 
           {/* Responsive Input Container */}

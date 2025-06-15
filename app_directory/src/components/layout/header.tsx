@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
+import Link from "next/link";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -58,32 +59,32 @@ const Header = () => {
 
               {/* Centered Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-8 font-mono mx-auto">
-                <a
+                <Link
                   href="#features"
                   className="text-slate-300 hover:text-accent transition-colors duration-200 text-sm"
                 >
                   <span className="text-accent">01.</span> Features
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#how-it-works"
                   className="text-slate-300 hover:text-accent transition-colors duration-200 text-sm"
                 >
                   <span className="text-accent">02.</span> How It Works
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#pricing"
                   className="text-slate-300 hover:text-accent transition-colors duration-200 text-sm"
                 >
                   <span className="text-accent">03.</span> Pricing
-                </a>
+                </Link>
               </nav>
 
               {/* Right-aligned CTA for desktop */}
               <div className="hidden md:block md:absolute md:right-8">
-                <a href="/">
+                <Link href="/">
                 <InteractiveHoverButton className="px-6 py-2 border border-accent text-accent text-sm font-mono">
                   Get Started
-                </InteractiveHoverButton></a>
+                </InteractiveHoverButton></Link>
               </div>
 
               {/* Mobile menu button */}
@@ -128,34 +129,34 @@ const Header = () => {
           } overflow-hidden`}
         >
           <div className="px-4 py-4 space-y-4">
-            <a
+            <Link
               href="#features"
               className="block text-slate-300 hover:text-accent transition-colors duration-200 text-sm font-mono py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="text-accent">01.</span> Features
-            </a>
-            <a
+            </Link>
+            <Link
               href="#how-it-works"
               className="block text-slate-300 hover:text-accent transition-colors duration-200 text-sm font-mono py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="text-accent">02.</span> How It Works
-            </a>
-            <a
+            </Link>
+            <Link
               href="#pricing"
               className="block text-slate-300 hover:text-accent transition-colors duration-200 text-sm font-mono py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="text-accent">03.</span> Pricing
-            </a>
-            <a
+            </Link>
+            <Link
               href="#contact"
               className="inline-block mt-4 px-4 py-2 border border-accent text-accent rounded hover:bg-accent hover:text-slate-900 transition-all duration-200 text-sm font-mono"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
       </header>

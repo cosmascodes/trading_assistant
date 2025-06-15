@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus, Globe, Brain, Mic, Send } from "lucide-react";
+import { Mic, Send } from "lucide-react";
 
 export default function ChatCard() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
