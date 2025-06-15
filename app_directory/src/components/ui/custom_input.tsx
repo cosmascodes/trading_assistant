@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Mic, Send } from "lucide-react";
+import { Plus, Mic, Send, Globe } from "lucide-react";
 
 export default function ChatCard() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -16,8 +16,8 @@ export default function ChatCard() {
   return (
     <div className="py-4">
       <div className="max-w-2xl space-y-4">
-        <div>
-          <div className="rounded-2xl p-4 border bg-gray-800">
+        <div className="flex justify-center items-center flex-col">
+          <div className="rounded-2xl p-4 border bg-gray-800 mb-4 w-full">
             <div className="flex flex-row items-center">
               <Textarea
                 ref={textareaRef}
@@ -58,6 +58,23 @@ export default function ChatCard() {
               </Button>
             </div>
             <div className="flex items-center gap-2 mt-2">
+              <Button
+                size="icon"
+                variant="ghost"
+                className="h-8 w-8 rounded-full bg-slate-400 hover:bg-slate-300 text-slate-800"
+              >
+                <Plus className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                className="h-8 px-1 rounded-full bg-slate-400 hover:bg-slate-300 text-slate-800 text-xs flex items-center gap-1"
+              >
+                <Globe className="h-3 w-3" />
+                News
+              </Button>
+            </div>
+          </div>
+          
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3 font-mono">
                 {[
@@ -74,8 +91,6 @@ export default function ChatCard() {
                   </button>
                 ))}
               </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
