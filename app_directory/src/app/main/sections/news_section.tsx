@@ -1,5 +1,3 @@
-import { Clock, BarChart2 } from "lucide-react";
-
 export const NewsSection = () => {
   return (
     <div className="min-h-screen text-slate-400 p-6 bg-gray-900/90 w-full">
