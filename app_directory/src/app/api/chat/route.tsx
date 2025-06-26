@@ -62,11 +62,23 @@ export async function POST(request: NextRequest) {
       response: data.response || data.message || 'No response from AI',
       session_id: data.session_id || data.sessionId || session_id
     });
-  } catch (error:any) {
-    console.error('Chat API error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
-      { status: 500 }
-    );
+  } catch (error: unknown) {
+  console.error('Chat API error:', error);
+
+  let message = 'Internal server error';
+  let details = '';
+
+  if (error instanceof Error) {
+    details = error.message;
+  } else if (typeof error === 'string') {
+    details = error;
+  } else {
+    details = JSON.stringify(error);
   }
+
+  return NextResponse.json(
+    { error: message, details },
+    { status: 500 }
+  );
+}
 }
