@@ -6,11 +6,6 @@ interface ChatRequest {
   session_id: string; // Changed to match FastAPI format
 }
 
-interface ChatResponse {
-  response: string;
-  session_id?: string;
-}
-
 export async function POST(request: NextRequest) {
   try {
     const body: ChatRequest = await request.json();
@@ -63,22 +58,22 @@ export async function POST(request: NextRequest) {
       session_id: data.session_id || data.sessionId || session_id
     });
   } catch (error: unknown) {
-  console.error('Chat API error:', error);
+    console.error('Chat API error:', error);
 
-  let message = 'Internal server error';
-  let details = '';
+    const message = 'Internal server error';
+    let details = '';
 
-  if (error instanceof Error) {
-    details = error.message;
-  } else if (typeof error === 'string') {
-    details = error;
-  } else {
-    details = JSON.stringify(error);
+    if (error instanceof Error) {
+      details = error.message;
+    } else if (typeof error === 'string') {
+      details = error;
+    } else {
+      details = JSON.stringify(error);
+    }
+
+    return NextResponse.json(
+      { error: message, details },
+      { status: 500 }
+    );
   }
-
-  return NextResponse.json(
-    { error: message, details },
-    { status: 500 }
-  );
-}
 }
